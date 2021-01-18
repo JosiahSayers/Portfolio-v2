@@ -1,12 +1,24 @@
-<script lang='ts'>
+<script lang="ts">
     export let navItems: { text: String, href: string, active: boolean }[] = [];
+
+    function isInViewport(element) {
+		const {top, bottom} = element.getBoundingClientRect() ?? {};
+		const heightToCheck = window.innerHeight / 2;
+		return top < heightToCheck && bottom > heightToCheck
+	}
+
+	document.addEventListener('scroll', () => {
+		const updatedItems = [...navItems];
+		updatedItems.forEach((item) => item.active = isInViewport(document.getElementById(item.href)));
+		navItems = updatedItems;
+	});
 </script>
 
 <nav>
     <div class="sections">
         {#each navItems as item}
             <div class="nav-item">
-                <a href="{item.href}" class="circle" class:active={item.active} class:has-background-link-light={!item.active} class:has-background-link={item.active}> </a>
+                <a href="#{item.href}" class="circle" class:active={item.active} class:has-background-link-light={!item.active} class:has-background-link={item.active}> </a>
                 <span>{item.text}</span>
             </div>
         {/each}
@@ -15,7 +27,7 @@
 
 <style>
     nav {
-        position: absolute;
+        position: fixed;
         right: 1rem;
         height: 100vh;
     }
