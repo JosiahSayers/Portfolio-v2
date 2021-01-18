@@ -3,7 +3,7 @@
     export let entries: string[] = [];
 
     let currentText = '';
-    const waitTimeBetweenStroke = 90;
+    const waitTimeBetweenStroke = 75;
     let intervalRef: number;
     let reverseDirection = false;
     let currentEntryIndex = 0;
@@ -23,7 +23,7 @@
                 intervalRef = setInterval(updateText, waitTimeBetweenStroke);
                 clearTimeout(timeoutRef);
                 reverseDirection = true;
-            }, waitTimeBetweenStroke * 14);
+            }, waitTimeBetweenStroke * 16);
         } else if (currentIndex > 0) {
             currentText = currentEntry.substr(0, currentIndex - 1);
         }
