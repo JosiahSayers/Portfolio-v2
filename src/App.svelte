@@ -5,6 +5,7 @@
 	import Projects from './sections/projects/Projects.svelte';
 	import Skills from './sections/skills/Skills.svelte';
 	import Footer from './components/Footer.svelte';
+	import { LOGGER } from './logging/sidelog';
 
 	const introNavItem = { text: 'Hello', id: 'intro', active: true };
 	const projectsNavItem = { text: 'My Work', id: 'projects', active: false };
@@ -17,6 +18,8 @@
 		skillsNavItem,
 		contactMeNavItem
 	];
+
+	LOGGER.info('Page Loaded');
 </script>
 
 <main>
