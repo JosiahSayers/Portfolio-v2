@@ -52,15 +52,13 @@ export default {
 		css({ output: 'bundle.css' }),
 
 		!production && copy({
-			targets: [
-				{ src: 'node_modules/bulma/css/bulma.css', dest: 'public/build' }
-			]
+			targets: [{ src: 'node_modules/bulma/css/bulma.css', dest: 'public/build'}],
+			overwrite: false
 		}),
 
 		production && copy({
-			targets: [
-				{ src: 'node_modules/bulma/css/bulma.min.css', dest: 'public/build' }
-			]
+			targets: [{ src: 'node_modules/bulma/css/bulma.min.css', dest: 'public/build' }],
+			overwrite: true
 		}),
 
 		// If you have external dependencies installed from
