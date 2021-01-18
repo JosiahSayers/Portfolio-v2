@@ -9,7 +9,7 @@
 
 	document.addEventListener('scroll', () => {
 		const updatedItems = [...navItems];
-		updatedItems.forEach((item) => item.active = isInViewport(document.getElementById(item.href)));
+		updatedItems.forEach((item) => item.active = isInViewport(document.getElementById(item.id)));
 		navItems = updatedItems;
 	});
 </script>
@@ -18,7 +18,7 @@
     <div class="sections">
         {#each navItems as item}
             <div class="nav-item">
-                <a href="#{item.href}" class="circle" class:active={item.active} class:has-background-link-light={!item.active} class:has-background-link={item.active}> </a>
+                <a href="#{item.id}" class="circle" class:active={item.active} class:has-background-link-light={!item.active} class:has-background-link={item.active}> </a>
                 <span>{item.text}</span>
             </div>
         {/each}

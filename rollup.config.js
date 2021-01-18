@@ -57,7 +57,7 @@ export default {
 		}),
 
 		production && copy({
-			targets: [{ src: 'node_modules/bulma/css/bulma.min.css', dest: 'public/build' }],
+			targets: [{ src: 'node_modules/bulma/css/bulma.min.css', dest: 'public/build', rename: 'bulma.css' }],
 			overwrite: true
 		}),
 

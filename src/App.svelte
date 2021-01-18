@@ -1,18 +1,29 @@
 <script lang="ts">
-	import Intro from './sections/intro/Intro.svelte';
 	import Navigation from './components/Navigation.svelte';
-	import Hero from './components/Hero.svelte';
+	import ContactMe from './sections/contact-me/ContactMe.svelte';
+	import Intro from './sections/intro/Intro.svelte';
+	import Projects from './sections/projects/Projects.svelte';
+	import Skills from './sections/skills/Skills.svelte';
+	import Footer from './components/Footer.svelte';
 
-	let navItems = [
-		{ text: 'Hello', href: 'intro', active: true },
-		{ text: 'My Work', href: 'projects', active: false },
-		{ text: 'My Skills', href: 'skills', active: false }
+	const introNavItem = { text: 'Hello', id: 'intro', active: true };
+	const projectsNavItem = { text: 'My Work', id: 'projects', active: false };
+	const skillsNavItem = { text: 'My Skills', id: 'skills', active: false };
+	const contactMeNavItem = { text: 'Contact Me', id: 'contact-me', active: false};
+
+	const navItems = [
+		introNavItem,
+		projectsNavItem,
+		skillsNavItem,
+		contactMeNavItem
 	];
 </script>
 
 <main>
 	<Navigation {navItems}></Navigation>
-	<Intro></Intro>
-	<Hero heroStyle="is-danger" id="projects">Projects</Hero>
-	<Hero id="skills">Skills</Hero>
+	<Intro id={introNavItem.id}></Intro>
+	<Projects id={projectsNavItem.id}></Projects>
+	<Skills id={skillsNavItem.id}></Skills>
+	<ContactMe id={contactMeNavItem.id}></ContactMe>
+	<Footer></Footer>
 </main>

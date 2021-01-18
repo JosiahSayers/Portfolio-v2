@@ -1,6 +1,7 @@
 <script lang="ts">
     import Hero from "../../components/Hero.svelte";
     import ChangingText from "./components/ChangingText.svelte";
+    export let id: string;
 
     const changingTextEntries = [
         "Awesome Person",
@@ -12,7 +13,7 @@
     ];
 </script>
 
-<Hero id="intro">
+<Hero {id}>
     <h1 class="title">
         Hello, <ChangingText entries={changingTextEntries} />
     </h1>
