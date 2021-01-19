@@ -5,6 +5,7 @@
 	import Projects from './sections/projects/Projects.svelte';
 	import Skills from './sections/skills/Skills.svelte';
 	import Footer from './components/Footer.svelte';
+	import Modal from './components/modal/Modal.svelte';
 	import { LOGGER } from './logging/sidelog';
 
 	const introNavItem = { text: 'Hello', id: 'intro', active: true };
@@ -23,6 +24,7 @@
 </script>
 
 <main>
+	<Modal></Modal>
 	<Navigation {navItems}></Navigation>
 	<Intro id={introNavItem.id}></Intro>
 	<Projects id={projectsNavItem.id}></Projects>

@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let navItems: { text: String, href: string, active: boolean }[] = [];
+    export let navItems: { text: String, id: string, active: boolean }[] = [];
 
     function isInViewport(element) {
 		const {top, bottom} = element.getBoundingClientRect() ?? {};
