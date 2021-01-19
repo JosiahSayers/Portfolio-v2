@@ -5,4 +5,7 @@ export interface Environment {
         clientId: string;
         apiEnabled: boolean;
     };
+    contactMeService: {
+        url: string;
+    }
 }
