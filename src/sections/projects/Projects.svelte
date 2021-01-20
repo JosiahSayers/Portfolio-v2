@@ -1,8 +1,26 @@
 <script lang="ts">
-    import Hero from '../../components/Hero.svelte';
+    import { onMount } from "svelte";
+import Project from "./components/Project.svelte";
+    import Tabs from "./components/Tabs.svelte";
+
     export let id: string;
+
+    let activeIndex = 0;
+    let projects = [];
+    $: selectedProject = projects[activeIndex];
+
+    onMount(async () => projects = await (await fetch('/projects.json')).json());
 </script>
 
-<Hero {id} heroStyle="is-danger">
-    <h1 class="title">Projects</h1>
-</Hero>
+<section class="hero is-danger" {id}>
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Projects</h1>
+        </div>
+    </div>
+    <Tabs 
+        bind:activeIndex
+        {projects}
+    />
+    <Project project={selectedProject} />
+</section>
