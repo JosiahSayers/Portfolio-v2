@@ -1,12 +1,8 @@
 export const ContactMeServce = {
     submit: async (formFields: FormFields): Promise<any> => {
-        // return fetch(environment.contactMeService.url, {
-        //     method: 'POST',
-        //     body: JSON.stringify(formFields)
-        // });
-
-        return new Promise((resolve, reject) => {
-            setTimeout(() => reject(null), 1000);
+        return fetch('/api/contact-form', {
+            method: 'POST',
+            body: JSON.stringify(formFields)
         });
     }
 };

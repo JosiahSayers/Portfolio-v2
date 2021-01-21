@@ -35,9 +35,9 @@ export default (req: NowRequest, res: NowResponse) => {
                 }
             ]);
         
-        mailersend.send(emailParams).then((emailRes) => {
+        (<Promise<any>>mailersend.send(emailParams)).then(() => {
             return res.status(200).send('');
-        }).catch((err) => {
+        }, (err) => {
             return res.status(500).json(err);
         });
     } else {

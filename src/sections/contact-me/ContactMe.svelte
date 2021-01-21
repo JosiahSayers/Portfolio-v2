@@ -33,8 +33,7 @@
                 .then(() => {
                     modalService.openModal('I\'ll be in touch with you shortly.', 'Contact Form Sent');
                     reset();
-                })
-                .catch(() => apiCallFailed = true)
+                }, () => apiCallFailed = true)
                 .finally(() => apiCallInProgress = false);
         } else {
             LOGGER.info('Contact form submitted with invalid values', currentFormState);
