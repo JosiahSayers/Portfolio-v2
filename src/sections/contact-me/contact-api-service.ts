@@ -1,9 +1,17 @@
+import { LOGGER } from "src/logging/sidelog";
+
 export const ContactMeServce = {
-    submit: async (formFields: FormFields): Promise<any> => {
-        return fetch('/api/contact-form', {
-            method: 'POST',
-            body: JSON.stringify(formFields)
-        });
+    submit: async (formFields: FormFields): Promise<{ wasSuccessful: boolean}> => {
+        try {
+            const res = await fetch('/api/contact-form', {
+                method: 'POST',
+                body: JSON.stringify(formFields)
+            });
+            return { wasSuccessful: res.status === 200 };
+        } catch (e) {
+            LOGGER.info('Error sending contact form email', e);
+            return { wasSuccessful: false };
+        }
     }
 };
 

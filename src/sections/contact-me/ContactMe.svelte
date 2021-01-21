@@ -30,10 +30,14 @@
             LOGGER.info('Contact form submitted', currentFormState);
             apiCallInProgress = true;
             ContactMeServce.submit({ name: currentFormState.name, email: currentFormState.email, message: currentFormState.message })
-                .then(() => {
-                    modalService.openModal('I\'ll be in touch with you shortly.', 'Contact Form Sent');
-                    reset();
-                }, () => apiCallFailed = true)
+                .then(({ wasSuccessful }) => {
+                    if (wasSuccessful) {
+                        modalService.openModal('I\'ll be in touch with you shortly.', 'Contact Form Sent');
+                        reset();
+                    } else {
+                        apiCallFailed = true;
+                    }
+                })
                 .finally(() => apiCallInProgress = false);
         } else {
             LOGGER.info('Contact form submitted with invalid values', currentFormState);
