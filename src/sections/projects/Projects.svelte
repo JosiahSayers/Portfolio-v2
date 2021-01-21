@@ -22,5 +22,8 @@ import Project from "./components/Project.svelte";
         bind:activeIndex
         {projects}
     />
-    <Project project={selectedProject} />
+    <!-- <Project project={selectedProject} /> -->
+    {#each projects as project, index}
+        <Project {project} active={activeIndex === index} />
+    {/each}
 </section>
