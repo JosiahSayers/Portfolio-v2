@@ -1,4 +1,4 @@
-import { NowRequest, NowResponse } from '@vercel/node'
+import type { NowRequest, NowResponse } from '@vercel/node'
 import MailerSend, { Recipient, EmailParams } from 'mailersend';
 
 export default (req: NowRequest, res: NowResponse) => {
@@ -6,7 +6,7 @@ export default (req: NowRequest, res: NowResponse) => {
         if (!req.body.name) { return res.status(400).json({ msg: 'name must be provided on the body' }); }
         if (!req.body.email) { return res.status(400).json({ msg: 'email must be provided on the body' }); }
         if (!req.body.message) { return res.status(400).json({ msg: 'message must be provided on the body' }); }
-        if (process.env.VERCEL_ENV !== 'development' && !/(https:\/\/)?(www.)?josiahsayers\.com/.test(req.headers.origin)) { return res.status(401).send(''); }
+        if (!isOriginValid(req.headers.origin)) { return res.status(401).send(''); }
 
         const mailersend = new MailerSend({
             api_key: process.env.MAILERSEND_API_KEY
@@ -43,4 +43,9 @@ export default (req: NowRequest, res: NowResponse) => {
     } else {
         return res.status(404).send('');
     }
+}
+
+function isOriginValid(origin: string): boolean {
+    const reg = new RegExp(`(https)?(www.)?${process.env.VERCEL_URL}`);
+    return reg.test(origin);
 }

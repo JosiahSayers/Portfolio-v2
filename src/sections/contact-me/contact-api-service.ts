@@ -5,6 +5,9 @@ export const ContactMeServce = {
         try {
             const res = await fetch('/api/contact-form', {
                 method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
                 body: JSON.stringify(formFields)
             });
             return { wasSuccessful: res.status === 200 };
