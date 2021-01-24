@@ -34,7 +34,7 @@ export default (req: NowRequest, res: NowResponse) => {
                     ]
                 }
             ]);
-        
+
         (<Promise<any>>mailersend.send(emailParams)).then(() => {
             return res.status(200).send('');
         }, (err) => {
@@ -46,6 +46,7 @@ export default (req: NowRequest, res: NowResponse) => {
 }
 
 function isOriginValid(origin: string): boolean {
-    const reg = new RegExp(`(https)?(www.)?${process.env.VERCEL_URL}`);
-    return reg.test(origin);
+    const vercelReg = new RegExp(`(https:\/\/)?(www\.)?${process.env.VERCEL_URL}`);
+    const prodReg = /(https: \/\/)?(www\.)?(next\.)?josiahsayers\.com/;
+    return vercelReg.test(origin) || prodReg.test(origin);
 }
