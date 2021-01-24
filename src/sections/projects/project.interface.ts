@@ -4,6 +4,6 @@ export interface ProjectInterface {
     sourcecodeUrl: string;
     imageUrl: string;
     description: string;
-    tags: string[];
+    technologies: string[];
     features: string[];
 }

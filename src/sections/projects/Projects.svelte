@@ -1,8 +1,7 @@
 <script lang="ts">
-    import { beforeUpdate } from "svelte";
-
     import Project from "./components/Project.svelte";
     import Tabs from "./components/Tabs.svelte";
+    import HeroTitle from "../../components/HeroTitle.svelte";
     import { projects } from "./projects";
 
     export let id: string;
@@ -20,7 +19,7 @@
 <section class="hero is-danger" {id}>
     <div class="hero-body">
         <div class="container">
-            <h1 class="title">Projects</h1>
+            <HeroTitle>Projects</HeroTitle>
         </div>
     </div>
     <Tabs bind:activeIndex {projects} />

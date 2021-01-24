@@ -1,5 +1,6 @@
 <script lang="ts">
     import Hero from "../../components/Hero.svelte";
+    import HeroTitle from "../../components/HeroTitle.svelte";
     import ErrorNotification from "../../components/ErrorNotification.svelte";
     import Input from "./components/Input.svelte";
 
@@ -68,7 +69,7 @@
 </script>
 
 <Hero {id} heroStyle="is-info">
-    <h1 class="title">Contact Me</h1>
+    <HeroTitle>Contact Me</HeroTitle>
 
     <div class="columns">
         <form

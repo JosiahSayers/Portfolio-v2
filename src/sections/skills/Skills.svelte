@@ -1,8 +1,9 @@
 <script lang="ts">
-    import Hero from '../../components/Hero.svelte';
+    import Hero from "../../components/Hero.svelte";
+    import HeroTitle from "../../components/HeroTitle.svelte";
     export let id: string;
 </script>
 
 <Hero {id}>
-    <h1 class="title">Skills</h1>
+    <HeroTitle>Skills</HeroTitle>
 </Hero>

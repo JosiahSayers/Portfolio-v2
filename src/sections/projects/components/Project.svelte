@@ -3,6 +3,7 @@
 
     import { fly } from "svelte/transition";
     import type { ProjectInterface } from "../project.interface";
+    import { technologyLinks } from "../projects";
 
     export let project: ProjectInterface;
     export let active: boolean;
@@ -46,11 +47,31 @@
             <h1 class="title">{project.name}</h1>
             <h2 class="subtitle">{project.description}</h2>
 
-            <ul>
-                {#each project.features as feature}
-                    <li>{feature}</li>
-                {/each}
-            </ul>
+            <div class="columns">
+                <div class="column">
+                    {#each project.technologies as tech}
+                        <span class="tag mx-2 is-normal is-rounded">
+                            {#if technologyLinks[tech]}
+                                <a
+                                    href={technologyLinks[tech]}
+                                    class="has-text-black"
+                                    target="_blank">{tech}</a
+                                >
+                            {:else}
+                                {tech}
+                            {/if}
+                        </span>
+                    {/each}
+                </div>
+            </div>
+
+            <div class="content">
+                <ul>
+                    {#each project.features as feature}
+                        <li>{feature}</li>
+                    {/each}
+                </ul>
+            </div>
         </div>
     </div>
 {/if}
