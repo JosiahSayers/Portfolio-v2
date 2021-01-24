@@ -16,6 +16,10 @@ const formState = derived(state, (currentState) => ({
     isMessageValid: isMessageValid(currentState.message)
 }));
 
+const getName = derived(state, (currentState) => currentState.name);
+const getEmail = derived(state, (currentState) => currentState.email);
+const getMessage = derived(state, (currentState) => currentState.message);
+
 const isNameValid = (name: string) => !!name;
 const isEmailValid = (email: string) => /^([a-zA-Z0-9_\-\.\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(email);
 const isMessageValid = (message: string) => !!message;
@@ -42,5 +46,8 @@ export {
     setName,
     setEmail,
     setMessage,
+    getName,
+    getEmail,
+    getMessage,
     resetForm
 };

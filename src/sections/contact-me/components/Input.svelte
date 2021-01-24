@@ -1,4 +1,6 @@
 <script lang="ts">
+    import type { Readable } from "svelte/store";
+
     export let formSubmitted: boolean;
     export let inputLabel: string;
     export let placeholder = inputLabel;
@@ -6,20 +8,23 @@
     export let isValid: (val: string) => boolean;
     export let errorMessage: string;
     export let updateValue: (newVal: string) => void;
+    export let valueChanges: Readable<string>;
 
-    let value = '';
+    let value = "";
+
+    valueChanges.subscribe((val) => (value = val));
 </script>
 
 <div class="field">
     <label class="label" for={id}>{inputLabel}</label>
     <div class="control">
-        <input 
+        <input
             class="input"
             class:is-danger={formSubmitted && !isValid(value)}
             class:is-success={isValid(value)}
             type="text"
             {placeholder}
-            {id} 
+            {id}
             bind:value
             on:keyup={() => updateValue(value)}
         />

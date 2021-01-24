@@ -3,4 +3,7 @@ export interface ProjectInterface {
     url: string;
     sourcecodeUrl: string;
     imageUrl: string;
+    description: string;
+    tags: string[];
+    features: string[];
 }

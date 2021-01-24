@@ -1,7 +1,7 @@
 import { LOGGER } from "src/logging/sidelog";
 
 export const ContactMeServce = {
-    submit: async (formFields: FormFields): Promise<{ wasSuccessful: boolean}> => {
+    submit: async (formFields: FormFields): Promise<{ wasSuccessful: boolean }> => {
         try {
             const res = await fetch('/api/contact-form', {
                 method: 'POST',
