@@ -37,8 +37,27 @@ export const projects: ProjectInterface[] = [
         features: [
             'Fully configurable from a single JSON file',
             'Support for multiple application\'s logs on one server',
-            { text: '<link>Angular library</link> published on NPM to consume the API easily', url: 'https://www.npmjs.com/package/sidelog-angular' },
+            { text: '<link>Angular library</link> published on NPM for easy API consumption', url: 'https://www.npmjs.com/package/sidelog-angular' },
             '100% test coverage'
+        ]
+    },
+    {
+        name: 'Taco Especial',
+        url: 'https://taco.josiahsayers.com',
+        sourcecodeUrl: 'https://github.com/JosiahSayers/Taco-Especial',
+        imageUrl: '',
+        description: 'Service to suggest randomly customized menu items from Taco Bell',
+        technologies: [
+            'Svelte',
+            'Node.js',
+            'TypeScript',
+            'Express',
+            'Cheerio',
+            'Axios'
+        ],
+        features: [
+            'API provides up to date menu information by scraping TacoBell.com and caching the results',
+            'Front end app allows the user to fine tune their recommendations by pulling in available customization options from the API'
         ]
     },
     {
@@ -72,5 +91,7 @@ export const technologyLinks = {
     Jest: 'https://jestjs.io/',
     Svelte: 'https://svelte.dev/',
     Angular: 'https://angular.io/',
-    Bulma: 'https://bulma.io/'
+    Bulma: 'https://bulma.io/',
+    Cheerio: 'https://cheerio.js.org/',
+    Axios: 'https://github.com/axios/axios'
 }
