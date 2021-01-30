@@ -45,13 +45,10 @@
         }}
     >
         <div class="container py-3">
-            <h1 class="title">
-                {project.name}
-                <ProjectLinks {project} />
-            </h1>
-            <h2 class="subtitle">{project.description}</h2>
+            <h2 class="subtitle mb-1">{project.description}</h2>
+            <ProjectLinks {project} />
 
-            <div class="columns">
+            <div class="columns mt-3">
                 <div class="column">
                     {#each project.technologies as tech}
                         <TechnologyLink

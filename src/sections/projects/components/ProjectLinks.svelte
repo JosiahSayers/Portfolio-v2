@@ -14,7 +14,7 @@
     }
 </script>
 
-<span class="is-size-7 ml-2">
+<span class="is-size-7">
     {#if project.url}
         <a href={project.url} target="_blank" on:click={() => logClick("Live")}
             >View Live</a
