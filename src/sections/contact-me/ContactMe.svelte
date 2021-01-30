@@ -1,6 +1,5 @@
 <script lang="ts">
-    import Hero from "../../components/Hero.svelte";
-    import HeroTitle from "../../components/HeroTitle.svelte";
+    import Section from "../../components/Section.svelte";
     import ErrorNotification from "../../components/ErrorNotification.svelte";
     import Input from "./components/Input.svelte";
 
@@ -69,62 +68,56 @@
     }
 </script>
 
-<div class="section is-center" {id}>
-    <div class="columns is-centered">
-        <form
-            class="column is-two-thirds box p-5"
-            on:submit|preventDefault={submitHandler}
-        >
-            <HeroTitle>Contact Me</HeroTitle>
-            <Input
-                {formSubmitted}
-                inputLabel="Your Name"
-                id="name-input"
-                isValid={isNameValid}
-                errorMessage="Please enter your name"
-                updateValue={(newValue) => setName(newValue)}
-                valueChanges={getName}
-            />
+<Section {id} title="Contact Me">
+    <form class="box p-5" on:submit|preventDefault={submitHandler}>
+        <Input
+            {formSubmitted}
+            inputLabel="Your Name"
+            id="name-input"
+            isValid={isNameValid}
+            errorMessage="Please enter your name"
+            updateValue={(newValue) => setName(newValue)}
+            valueChanges={getName}
+        />
 
-            <Input
-                {formSubmitted}
-                inputLabel="Your Email"
-                id="email-input"
-                isValid={isEmailValid}
-                errorMessage="Please enter a valid email"
-                updateValue={(newValue) => setEmail(newValue)}
-                valueChanges={getEmail}
-            />
+        <Input
+            {formSubmitted}
+            inputLabel="Your Email"
+            id="email-input"
+            isValid={isEmailValid}
+            errorMessage="Please enter a valid email"
+            updateValue={(newValue) => setEmail(newValue)}
+            valueChanges={getEmail}
+        />
 
-            <TextArea
-                {formSubmitted}
-                inputLabel="Your Message"
-                id="message-textarea"
-                isValid={isMessageValid}
-                errorMessage="Please enter a message"
-                updateValue={(newValue) => setMessage(newValue)}
-                valueChanges={getMessage}
-            />
+        <TextArea
+            {formSubmitted}
+            inputLabel="Your Message"
+            id="message-textarea"
+            isValid={isMessageValid}
+            errorMessage="Please enter a message"
+            updateValue={(newValue) => setMessage(newValue)}
+            valueChanges={getMessage}
+        />
 
-            <div class="field is-grouped">
-                <div class="control">
-                    <button
-                        type="submit"
-                        class="button is-link"
-                        class:is-loading={apiCallInProgress}> Submit </button>
-                </div>
+        <div class="field is-grouped">
+            <div class="control">
+                <button
+                    type="submit"
+                    class="button is-link"
+                    class:is-loading={apiCallInProgress}> Submit </button>
             </div>
+        </div>
 
-            {#if apiCallFailed}
-                <ErrorNotification>
-                    The form failed to send, please try again or feel free to
-                    send me an email directly at
-                    <a
-                        href="mailto:josiah.sayers15@gmail.com?subject=josiahsayers.com Contact Me Form"
-                        >josiah.sayers15@gmail.com</a
-                    >
-                </ErrorNotification>
-            {/if}
-        </form>
-    </div>
-</div>
+        {#if apiCallFailed}
+            <ErrorNotification>
+                The form failed to send, please try again or feel free to send
+                me an email directly at
+                <a
+                    href="mailto:josiah.sayers15@gmail.com?subject=josiahsayers.com Contact Me Form"
+                    >josiah.sayers15@gmail.com</a
+                >
+            </ErrorNotification>
+        {/if}
+    </form>
+</Section>

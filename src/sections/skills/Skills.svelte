@@ -1,9 +1,6 @@
 <script lang="ts">
-    import Hero from "../../components/Hero.svelte";
-    import HeroTitle from "../../components/HeroTitle.svelte";
+    import Section from "../../components/Section.svelte";
     export let id: string;
 </script>
 
-<div class="section" {id}>
-    <HeroTitle>Skills</HeroTitle>
-</div>
+<Section {id} title="Skills" />

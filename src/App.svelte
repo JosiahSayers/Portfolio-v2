@@ -27,7 +27,7 @@
 	LOGGER.info("Page Loaded");
 </script>
 
-<main class="has-background-light">
+<main>
 	<Modal />
 	<Navigation {navItems} />
 	<Intro id={introNavItem.id} />

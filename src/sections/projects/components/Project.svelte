@@ -32,7 +32,7 @@
 
 {#if project && shouldDisplay}
     <div
-        class="container py-7 box"
+        class="py-7"
         out:fly={{
             x: reverseAnimation ? x * -1 : x,
             duration: animationDuration,
@@ -42,7 +42,7 @@
             duration: animationDuration,
         }}
     >
-        <div class="container px-3">
+        <div class="container py-3">
             <h1 class="title">{project.name}</h1>
             <h2 class="subtitle">{project.description}</h2>
 

@@ -2,6 +2,7 @@
     import Project from "./components/Project.svelte";
     import Tabs from "./components/Tabs.svelte";
     import HeroTitle from "../../components/HeroTitle.svelte";
+    import Section from "../../components/Section.svelte";
     import { projects } from "./projects";
 
     export let id: string;
@@ -16,16 +17,9 @@
     }
 </script>
 
-<section class="section" {id}>
-    <div class="container">
-        <HeroTitle>Projects</HeroTitle>
-        <Tabs bind:activeIndex {projects} />
-        {#each projects as project, index}
-            <Project
-                {project}
-                active={activeIndex === index}
-                {reverseAnimation}
-            />
-        {/each}
-    </div>
-</section>
+<Section {id} title="Projects">
+    <Tabs bind:activeIndex {projects} />
+    {#each projects as project, index}
+        <Project {project} active={activeIndex === index} {reverseAnimation} />
+    {/each}
+</Section>
