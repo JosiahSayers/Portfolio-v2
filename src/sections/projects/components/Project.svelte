@@ -48,17 +48,6 @@
             <h2 class="subtitle mb-1">{project.description}</h2>
             <ProjectLinks {project} />
 
-            <div class="columns mt-3">
-                <div class="column">
-                    {#each project.technologies as tech}
-                        <TechnologyLink
-                            technology={tech}
-                            link={technologyLinks[tech]}
-                        />
-                    {/each}
-                </div>
-            </div>
-
             <div class="content">
                 <ul>
                     {#each project.features as feature}
@@ -66,6 +55,13 @@
                     {/each}
                 </ul>
             </div>
+
+            {#each project.technologies as tech}
+                <TechnologyLink
+                    technology={tech}
+                    link={technologyLinks[tech]}
+                />
+            {/each}
         </div>
     </div>
 {/if}
