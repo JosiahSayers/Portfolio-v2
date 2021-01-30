@@ -2,6 +2,7 @@
     import { fly } from "svelte/transition";
     import type { ProjectInterface } from "../project.interface";
     import { technologyLinks } from "../projects";
+    import ProjectFeature from "./ProjectFeature.svelte";
     import ProjectLinks from "./ProjectLinks.svelte";
     import TechnologyLink from "./TechnologyLink.svelte";
 
@@ -64,7 +65,7 @@
             <div class="content">
                 <ul>
                     {#each project.features as feature}
-                        <li>{feature}</li>
+                        <li><ProjectFeature {feature} /></li>
                     {/each}
                 </ul>
             </div>

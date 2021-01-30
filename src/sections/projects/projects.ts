@@ -37,7 +37,7 @@ export const projects: ProjectInterface[] = [
         features: [
             'Fully configurable from a single JSON file',
             'Support for multiple application\'s logs on one server',
-            'Angular library published on NPM to consume the API easily',
+            { text: '<link>Angular library</link> published on NPM to consume the API easily', url: 'https://www.npmjs.com/package/sidelog-angular' },
             '100% test coverage'
         ]
     },

@@ -5,5 +5,10 @@ export interface ProjectInterface {
     imageUrl: string;
     description: string;
     technologies: string[];
-    features: string[];
+    features: Array<string | ProjectFeature>;
+}
+
+export interface ProjectFeature {
+    text: string;
+    url: string;
 }
