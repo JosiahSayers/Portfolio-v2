@@ -2,6 +2,7 @@
     import { fly } from "svelte/transition";
     import type { ProjectInterface } from "../project.interface";
     import { technologyLinks } from "../projects";
+    import ProjectLinks from "./ProjectLinks.svelte";
     import TechnologyLink from "./TechnologyLink.svelte";
 
     export let project: ProjectInterface;
@@ -43,7 +44,10 @@
         }}
     >
         <div class="container py-3">
-            <h1 class="title">{project.name}</h1>
+            <h1 class="title">
+                {project.name}
+                <ProjectLinks {project} />
+            </h1>
             <h2 class="subtitle">{project.description}</h2>
 
             <div class="columns">
