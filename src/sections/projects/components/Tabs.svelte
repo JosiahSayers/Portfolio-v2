@@ -12,7 +12,7 @@
                 <a
                     href="javascript:void(0)"
                     on:click|preventDefault={() => (activeIndex = index)}
-                    >{project.name}</a
+                    class="has-text-black">{project.name}</a
                 >
             </li>
         {/each}

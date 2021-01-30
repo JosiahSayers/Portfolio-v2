@@ -39,6 +39,7 @@
         position: fixed;
         right: 1rem;
         height: 100vh;
+        z-index: 9999;
     }
 
     .sections {

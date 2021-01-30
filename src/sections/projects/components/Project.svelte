@@ -32,7 +32,7 @@
 
 {#if project && shouldDisplay}
     <div
-        class="py-7"
+        class="py-7 px-4"
         out:fly={{
             x: reverseAnimation ? x * -1 : x,
             duration: animationDuration,

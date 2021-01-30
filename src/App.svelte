@@ -12,7 +12,7 @@
 	const projectsNavItem = { text: "My Work", id: "projects", active: false };
 	const skillsNavItem = { text: "My Skills", id: "skills", active: false };
 	const contactMeNavItem = {
-		text: "Contact Me",
+		text: "Contact",
 		id: "contact-me",
 		active: false,
 	};
