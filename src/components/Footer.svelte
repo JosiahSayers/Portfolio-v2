@@ -2,7 +2,10 @@
     import Hero from "./Hero.svelte";
 
     const links = [
-        { text: "Github", href: "https://github.com/JosiahSayers" },
+        {
+            text: "Github",
+            href: "https://github.com/JosiahSayers"
+        },
         {
             text: "LinkedIn",
             href: "https://www.linkedin.com/in/josiah-sayers/",

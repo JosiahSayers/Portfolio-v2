@@ -16,14 +16,16 @@
     }
 </script>
 
-<section class="hero is-danger" {id}>
-    <div class="hero-body">
-        <div class="container">
-            <HeroTitle>Projects</HeroTitle>
-        </div>
+<section class="section" {id}>
+    <div class="container">
+        <HeroTitle>Projects</HeroTitle>
+        <Tabs bind:activeIndex {projects} />
+        {#each projects as project, index}
+            <Project
+                {project}
+                active={activeIndex === index}
+                {reverseAnimation}
+            />
+        {/each}
     </div>
-    <Tabs bind:activeIndex {projects} />
-    {#each projects as project, index}
-        <Project {project} active={activeIndex === index} {reverseAnimation} />
-    {/each}
 </section>

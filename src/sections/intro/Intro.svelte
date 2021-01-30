@@ -13,8 +13,8 @@
     ];
 </script>
 
-<Hero {id}>
-    <h1 class="title">
+<Hero {id} heroStyle="is-primary is-bold">
+    <h1 class="title is-unselectable">
         Hello, <ChangingText entries={changingTextEntries} />
     </h1>
     <h2 class="subtitle">

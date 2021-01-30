@@ -1,24 +1,33 @@
 <script lang="ts">
-    export let navItems: { text: String, id: string, active: boolean }[] = [];
+    export let navItems: { text: String; id: string; active: boolean }[] = [];
 
     function isInViewport(element) {
-		const {top, bottom} = element.getBoundingClientRect() ?? {};
-		const heightToCheck = window.innerHeight / 2;
-		return top < heightToCheck && bottom > heightToCheck
-	}
+        const { top, bottom } = element.getBoundingClientRect() ?? {};
+        const heightToCheck = window.innerHeight / 2;
+        return top < heightToCheck && bottom > heightToCheck;
+    }
 
-	document.addEventListener('scroll', () => {
-		const updatedItems = [...navItems];
-		updatedItems.forEach((item) => item.active = isInViewport(document.getElementById(item.id)));
-		navItems = updatedItems;
-	});
+    document.addEventListener("scroll", () => {
+        const updatedItems = [...navItems];
+        updatedItems.forEach(
+            (item) =>
+                (item.active = isInViewport(document.getElementById(item.id)))
+        );
+        navItems = updatedItems;
+    });
 </script>
 
-<nav>
+<nav class="is-hidden-mobile is-hidden-tablet-only">
     <div class="sections">
         {#each navItems as item}
             <div class="nav-item">
-                <a href="#{item.id}" class="circle" class:active={item.active} class:has-background-link-light={!item.active} class:has-background-link={item.active}> </a>
+                <a
+                    href="#{item.id}"
+                    class="circle"
+                    class:active={item.active}
+                    class:has-background-link-light={!item.active}
+                    class:has-background-link={item.active}
+                />
                 <span>{item.text}</span>
             </div>
         {/each}
@@ -64,4 +73,10 @@
     .circle.active + span {
         opacity: 1;
     }
+
+    /* @media only screen and (max-width: 1000px) {
+        nav {
+            display: none;
+        }
+    } */
 </style>

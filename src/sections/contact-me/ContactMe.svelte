@@ -21,6 +21,7 @@
         setName,
     } from "./contact-form-store";
     import { get } from "svelte/store";
+    import TextArea from "./components/TextArea.svelte";
 
     export let id: string;
 
@@ -68,14 +69,13 @@
     }
 </script>
 
-<Hero {id} heroStyle="is-info">
-    <HeroTitle>Contact Me</HeroTitle>
-
-    <div class="columns">
+<div class="section is-center" {id}>
+    <div class="columns is-centered">
         <form
-            class="column is-two-thirds"
+            class="column is-two-thirds box p-5"
             on:submit|preventDefault={submitHandler}
         >
+            <HeroTitle>Contact Me</HeroTitle>
             <Input
                 {formSubmitted}
                 inputLabel="Your Name"
@@ -96,7 +96,7 @@
                 valueChanges={getEmail}
             />
 
-            <Input
+            <TextArea
                 {formSubmitted}
                 inputLabel="Your Message"
                 id="message-textarea"
@@ -127,4 +127,4 @@
             {/if}
         </form>
     </div>
-</Hero>
+</div>

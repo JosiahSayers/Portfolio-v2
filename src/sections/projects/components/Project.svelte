@@ -1,15 +1,14 @@
 <script lang="ts">
-    import { afterUpdate, beforeUpdate } from "svelte";
-
     import { fly } from "svelte/transition";
     import type { ProjectInterface } from "../project.interface";
     import { technologyLinks } from "../projects";
+    import TechnologyLink from "./TechnologyLink.svelte";
 
     export let project: ProjectInterface;
     export let active: boolean;
     export let reverseAnimation: boolean;
 
-    const animationDuration = 400;
+    const animationDuration = 150;
 
     let timeoutRef: number;
     let shouldDisplay = true;
@@ -33,7 +32,7 @@
 
 {#if project && shouldDisplay}
     <div
-        class="hero-body"
+        class="container py-7 box"
         out:fly={{
             x: reverseAnimation ? x * -1 : x,
             duration: animationDuration,
@@ -43,24 +42,17 @@
             duration: animationDuration,
         }}
     >
-        <div class="container">
+        <div class="container px-3">
             <h1 class="title">{project.name}</h1>
             <h2 class="subtitle">{project.description}</h2>
 
             <div class="columns">
                 <div class="column">
                     {#each project.technologies as tech}
-                        <span class="tag mx-2 is-normal is-rounded">
-                            {#if technologyLinks[tech]}
-                                <a
-                                    href={technologyLinks[tech]}
-                                    class="has-text-black"
-                                    target="_blank">{tech}</a
-                                >
-                            {:else}
-                                {tech}
-                            {/if}
-                        </span>
+                        <TechnologyLink
+                            technology={tech}
+                            link={technologyLinks[tech]}
+                        />
                     {/each}
                 </div>
             </div>
@@ -75,6 +67,3 @@
         </div>
     </div>
 {/if}
-
-<style>
-</style>

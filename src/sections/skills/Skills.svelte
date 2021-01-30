@@ -4,6 +4,6 @@
     export let id: string;
 </script>
 
-<Hero {id}>
+<div class="section" {id}>
     <HeroTitle>Skills</HeroTitle>
-</Hero>
+</div>

@@ -5,20 +5,16 @@
     export let projects: ProjectInterface[];
 </script>
 
-<div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
-        <div class="container">
-            <ul>
-                {#each projects as project, index}
-                    <li class:is-active={activeIndex === index}>
-                        <a
-                            href="javascript:void(0)"
-                            on:click|preventDefault={() =>
-                                (activeIndex = index)}>{project.name}</a
-                        >
-                    </li>
-                {/each}
-            </ul>
-        </div>
-    </nav>
+<div class="tabs is-medium is-boxed mb-0">
+    <ul>
+        {#each projects as project, index}
+            <li class:is-active={activeIndex === index}>
+                <a
+                    href="javascript:void(0)"
+                    on:click|preventDefault={() => (activeIndex = index)}
+                    >{project.name}</a
+                >
+            </li>
+        {/each}
+    </ul>
 </div>
