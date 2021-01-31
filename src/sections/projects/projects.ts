@@ -70,10 +70,11 @@ export const projects: ProjectInterface[] = [
             'Svelte',
             'Node.js',
             'TypeScript',
-            'Bulma'
+            'Bulma',
+            "MailerSend"
         ],
         features: [
-            'Contact Me API built with a Node.js serverless function',
+            'Contact Me API built with a Node.js serverless function utilizing the MailerSend API to send me an email of each form submission',
             'UI built with Svelte'
         ]
     }
@@ -93,5 +94,6 @@ export const technologyLinks = {
     Angular: 'https://angular.io/',
     Bulma: 'https://bulma.io/',
     Cheerio: 'https://cheerio.js.org/',
-    Axios: 'https://github.com/axios/axios'
+    Axios: 'https://github.com/axios/axios',
+    MailerSend: 'https://www.mailersend.com/'
 }
