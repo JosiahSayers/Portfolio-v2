@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Navigation from "./components/Navigation.svelte";
 	import ContactMe from "./sections/contact-me/ContactMe.svelte";
 	import Intro from "./sections/intro/Intro.svelte";
 	import Projects from "./sections/projects/Projects.svelte";
