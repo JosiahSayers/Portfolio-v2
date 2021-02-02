@@ -29,7 +29,6 @@
 
 <main>
 	<Modal />
-	<Navigation {navItems} />
 	<Intro id={introNavItem.id} />
 	<Projects id={projectsNavItem.id} />
 	<Skills id={skillsNavItem.id} />
