@@ -1,8 +1,8 @@
-<script lang='ts'>
+<script lang="ts">
     import { onDestroy, onMount } from "svelte";
     export let entries: string[] = [];
 
-    let currentText = '';
+    let currentText = "";
     const waitTimeBetweenStroke = 55;
     let intervalRef: number;
     let reverseDirection = false;
@@ -13,7 +13,9 @@
         const currentEntry = entries[currentEntryIndex];
 
         if (reverseDirection && currentIndex === 0) {
-            currentEntryIndex = entries[currentEntryIndex + 1] ? currentEntryIndex + 1 : 0;
+            currentEntryIndex = entries[currentEntryIndex + 1]
+                ? currentEntryIndex + 1
+                : 0;
             reverseDirection = false;
         } else if (currentIndex < currentEntry.length && !reverseDirection) {
             currentText = currentEntry.substr(0, currentIndex + 1);
@@ -30,7 +32,9 @@
     }
 
     updateText();
-    onMount(() => intervalRef = setInterval(updateText, waitTimeBetweenStroke));
+    onMount(
+        () => (intervalRef = setInterval(updateText, waitTimeBetweenStroke))
+    );
     onDestroy(() => clearInterval(intervalRef));
 </script>
 
@@ -40,8 +44,13 @@
 
 <style>
     .blinking-cursor {
-        animation: blinker .5s cubic-bezier(.1, 0, 0.4, 0.4) infinite alternate;  
+        animation: blinker 0.5s cubic-bezier(0.1, 0, 0.4, 0.4) infinite
+            alternate;
     }
 
-    @keyframes blinker { to { opacity: 0; } }
+    @keyframes blinker {
+        to {
+            opacity: 0;
+        }
+    }
 </style>
