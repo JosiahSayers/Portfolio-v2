@@ -11,27 +11,32 @@
     function updateText() {
         const currentIndex = currentText.length;
         const currentEntry = entries[currentEntryIndex];
+        const shouldMoveToNextString = reverseDirection && currentIndex === 0;
+        const shouldAddNextCharacter =
+            currentIndex < currentEntry.length && !reverseDirection;
+        const shouldReverseDirection =
+            currentIndex === currentEntry.length && !reverseDirection;
+        const shouldRemoveNextCharacter = currentIndex > 0;
 
-        if (reverseDirection && currentIndex === 0) {
+        if (shouldMoveToNextString) {
             currentEntryIndex = entries[currentEntryIndex + 1]
                 ? currentEntryIndex + 1
                 : 0;
             reverseDirection = false;
-        } else if (currentIndex < currentEntry.length && !reverseDirection) {
+        } else if (shouldAddNextCharacter) {
             currentText = currentEntry.substr(0, currentIndex + 1);
-        } else if (currentIndex === currentEntry.length && !reverseDirection) {
+        } else if (shouldReverseDirection) {
             clearInterval(intervalRef);
             const timeoutRef = setTimeout(() => {
                 intervalRef = setInterval(updateText, waitTimeBetweenStroke);
                 clearTimeout(timeoutRef);
                 reverseDirection = true;
             }, waitTimeBetweenStroke * 25);
-        } else if (currentIndex > 0) {
+        } else if (shouldRemoveNextCharacter) {
             currentText = currentEntry.substr(0, currentIndex - 1);
         }
     }
 
-    updateText();
     onMount(
         () => (intervalRef = setInterval(updateText, waitTimeBetweenStroke))
     );
