@@ -9,6 +9,7 @@
     <ul>
         {#each projects as project, index}
             <li class:is-active={activeIndex === index}>
+                <!-- svelte-ignore a11y-invalid-attribute -->
                 <a
                     href="javascript:void(0)"
                     on:click|preventDefault={() => (activeIndex = index)}
