@@ -5,6 +5,16 @@ export const SKILL_LIST: Skill[] = [
         category: 'Frontend',
         technologies: [
             {
+                name: 'JavaScript',
+                type: 'Language',
+                tags: []
+            },
+            {
+                name: 'TypeScript',
+                type: 'Language',
+                tags: []
+            },
+            {
                 name: 'Angular',
                 type: 'Frontend Framework',
                 tags: [
@@ -52,6 +62,11 @@ export const SKILL_LIST: Skill[] = [
                 name: 'MongoDB',
                 type: 'Database',
                 tags: []
+            },
+            {
+                name: 'SQL',
+                type: 'Language',
+                tags: []
             }
         ]
     },
@@ -65,8 +80,34 @@ export const SKILL_LIST: Skill[] = [
                     'Authentication',
                     'Cloud Functions',
                     'Cloud Storage',
-                    'NoSQL Database'
+                    'NoSQL Database',
+                    'Cloud Provider'
                 ]
+            },
+            {
+                name: 'Apigee',
+                type: 'API Gateway',
+                tags: []
+            },
+            {
+                name: 'Google Cloud Platform',
+                type: 'Cloud Provider',
+                tags: []
+            }
+        ]
+    },
+    {
+        category: 'Development Tools',
+        technologies: [
+            {
+                name: 'Docker',
+                type: 'Virtualization Tools',
+                tags: []
+            },
+            {
+                name: 'Git',
+                type: 'Source Control',
+                tags: []
             }
         ]
     }
