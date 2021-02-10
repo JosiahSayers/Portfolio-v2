@@ -4,7 +4,7 @@
     const links = [
         {
             text: "Github",
-            href: "https://github.com/JosiahSayers"
+            href: "https://github.com/JosiahSayers",
         },
         {
             text: "LinkedIn",
@@ -12,7 +12,7 @@
         },
         {
             text: "Resume",
-            href: "https://www.josiahsayers.com/docs/josiah.sayers.pdf",
+            href: "/docs/josiah.sayers.pdf",
         },
     ];
 </script>
