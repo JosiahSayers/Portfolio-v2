@@ -14,7 +14,7 @@ export const projects: ProjectInterface[] = [
             'Swagger'
         ],
         features: [
-            'Allows users to created shortened links to any webpage',
+            'Allows users to create shortened links to any webpage',
             'Easy to use API for developers',
             'Developer portal where a user can create and remove applications, with each one being provided a unique API key. The developer portal also shows statistics about the links created with each application.',
             'Chrome extension to quickly create shortened links when browsing any website'
