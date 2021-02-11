@@ -12,7 +12,7 @@
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <a
                     href="javascript:void(0)"
-                    on:click|preventDefault={() => (activeIndex = index)}
+                    on:click={() => (activeIndex = index)}
                     class="has-text-black">{project.name}</a
                 >
             </li>

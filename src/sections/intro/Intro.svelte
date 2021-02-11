@@ -35,12 +35,8 @@
 <style>
     .titles {
         width: fit-content;
-        padding: 1.5rem;
+        padding: 1.5rem 0;
         flex-shrink: 0;
-    }
-
-    .title {
-        font-size: 2.5rem;
     }
 
     @media only screen and (max-width: 500px) {

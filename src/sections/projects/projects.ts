@@ -38,7 +38,8 @@ export const projects: ProjectInterface[] = [
             'Fully configurable from a single JSON file',
             'Support for multiple application\'s logs on one server',
             { text: '<link>Angular library</link> published on NPM for easy API consumption', url: 'https://www.npmjs.com/package/sidelog-angular' },
-            '100% test coverage'
+            '100% test coverage',
+            'Single command local setup for easy development utilizing docker-compose'
         ]
     },
     {

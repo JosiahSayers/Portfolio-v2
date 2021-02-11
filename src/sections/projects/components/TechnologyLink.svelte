@@ -3,7 +3,7 @@
     export let link: string;
 </script>
 
-<span class="tag is-normal has-background-info-light mx-2">
+<span class="tag is-normal has-background-info-light m-2">
     {#if link}
         <a href={link} class="has-text-black" target="_blank">{technology}</a>
     {:else}
