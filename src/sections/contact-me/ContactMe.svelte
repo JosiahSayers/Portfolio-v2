@@ -11,7 +11,7 @@
         <div class="column has-text-centered my-3">
             <h2>
                 <p>Got a site that needs built?</p>
-                <p>Want to reach out about a job oppurtunity?</p>
+                <p>Want to reach out about a job opportunity?</p>
                 <p>Need some help getting started in web dev?</p>
                 <p class="has-text-weight-bold mt-3">
                     I'd love to hear from you!
