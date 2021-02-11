@@ -16,7 +16,7 @@
 <div class="gradient">
     <Hero
         {id}
-        heroStyle="is-medium has-bg-image arrow-background"
+        heroStyle="is-medium has-bg-image cogs-background"
         fullHeight={false}
         fadeOut={true}
     >
@@ -39,9 +39,13 @@
         flex-shrink: 0;
     }
 
+    .title {
+        font-size: 2.5rem;
+    }
+
     @media only screen and (max-width: 500px) {
         h1 {
-            min-height: 8rem;
+            min-height: 9rem;
             display: flex;
             flex-direction: column;
         }
