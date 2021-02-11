@@ -1,5 +1,9 @@
+import { v4 as uuid } from 'uuid';
+
+const sessionId = uuid();
+
 async function sendLog(level: LogLevel, message: string, json?: any): Promise<any> {
-    const body = { level, message, json };
+    const body = { level, message, json: { sessionId, ...json } };
     !environment.production ? console.log('LOG: ', body) : null;
     return environment.sidelog.apiEnabled ? fetch(environment.sidelog.url, {
         method: 'POST',
