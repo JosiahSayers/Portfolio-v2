@@ -6,7 +6,7 @@
 </script>
 
 <!-- <div class="accent" /> -->
-<div class="is-flex mb-5 hero-title">
+<div class="is-flex is-align-items-center mb-5 hero-title">
     <img
         src="/pictures/cog.svg"
         alt="gear"
