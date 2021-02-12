@@ -1,7 +1,7 @@
 <script lang="ts">
     let rotation = 0;
     window.addEventListener("scroll", (e) => {
-        rotation = window.pageYOffset;
+        rotation = window.pageYOffset * -1;
     });
 </script>
 
@@ -22,13 +22,6 @@
 <style>
     .title {
         font-size: 1.9rem;
-    }
-
-    .accent {
-        height: 0.3rem;
-        width: 2.3rem;
-        background-color: #a8a8a8;
-        margin-bottom: 0.45rem;
     }
 
     img {
